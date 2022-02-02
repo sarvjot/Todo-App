@@ -1,3 +1,4 @@
+/* ---------------------------------Overall Page Styles----------------------------------------*/
 :root{
     --poppins-font: 'Poppins', sans-serif;
 
@@ -14,6 +15,7 @@
 
     --font-dark: #000000;
     --font-light: #ffffff;
+    --font-dull: #828282;
 
     --bg-dark: #ffffff;
 
@@ -35,6 +37,7 @@
     font-family: var(--poppins-font);
     border: 0;
     margin: 0;
+    padding: 0;
 }
 
 html{
@@ -45,6 +48,8 @@ body{
     /* Background Propagation: There is a infinitely large canvas behind the root, and if root doesn't cover it completely, it's background will repeat in order to propagate completely to canvas*/
     background-image: linear-gradient(var(--gradient-deg), var(--gradient-start), var(--gradient-end) var(--gradient-percent));
 }
+
+/* ---------------------------------Heading Section Styles----------------------------------------*/
 
 #heading-div{
     align-items: center;
@@ -66,16 +71,15 @@ body{
     margin: 0 auto;
 }
 
+/* ---------------------------------AddTask Section Styles----------------------------------------*/
+
 #add-task{
     margin: var(--margin-sm) auto;
-}
-
-#todo-tasks{
-    margin: var(--margin-lg) auto;
-}
-
-#add-task, #todo-tasks{
     width: var(--task-width);
+}
+
+#plus{
+    background-color: var(--plus-color);
 }
 
 .task{
@@ -89,9 +93,6 @@ input{
     flex: 1 1 auto;
     /* min-width is necessary for flex-basis auto, as otherwise flex-basis maybe influenced by content of input*/
     min-width: 0;
-}
-
-#add-task input{
     font-size: var(--font-md);
     font-weight: var(--font-normal);
 }
@@ -99,24 +100,55 @@ input{
 button{
     flex: 0 0 var(--side-length);
     color: var(--font-light);
+    cursor: pointer;
+}
+
+/* ---------------------------------TodoTasks Section Styles----------------------------------------*/
+
+#todo-tasks{
+    margin: var(--margin-lg) auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-sm);
+}
+
+#todo-tasks{
+    width: var(--task-width);
 }
 
 #todo-tasks button{
     font-size: var(--font-sm);
 }
 
+.text{
+    padding-left: 10px;
+    padding-top: 5px;
+    flex: 1 1 auto;
+    /* min-width is necessary for flex-basis auto, as otherwise flex-basis maybe influenced by content of input*/
+    min-width: 0;
+}
+
 .trash{
     background-color: var(--trash-color);
 }
 
-#plus{
-    background-color: var(--plus-color);
-}
-
-#check{
+.check{
     background-color: var(--check-color);
 }
 
-#edit{
+.edit{
     background-color: var(--edit-color);
+}
+
+.delete{
+    background-color: var(--trash-color);
+}
+
+.done div{
+    text-decoration: line-through;
+    color: var(--font-dull);
+}
+
+.deleted{
+    display: none;
 }
